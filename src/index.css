@@ -1,13 +1,177 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*GENERAL*/
+html{
+    height: 100%;
+    overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+    margin: 0;
+    padding: 0;
+    background:url('./Img/background.jfif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    user-select: none;
+    position: relative;
+    height: 100%;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+}
+
+/*MAIN*/
+.calculator{
+    background-color: black;
+    width: 240px;
+    border-radius: .5em;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.display{
+    font-size: 4em;
+    color:white;
+    text-align: right;
+    height: 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.display p{
+    margin: 0;
+    font-size: 1em;
+    margin-right: .2em;
+}
+
+button{
+    border-radius: 50%;
+    border: 0;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3em;
+    margin: 0.2em;
+    background-color: #4c4c4c;
+    color:white;
+}
+
+button[name="0"]{
+    width: 110px;
+    height: 50px;
+    border-radius: 1em;
+    text-align: left;
+    padding-left: 1em;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+button:focus{
+    outline: none;
+}
+
+/*NUMBER BUTTONS*/
+.activated{
+    animation: activated .8s ease forwards;
+}
+
+@keyframes activated{
+    from{
+        background-color: #4c4c4c;
+    }
+
+    to{
+        background-color: silver;
+    }
+}
+
+.disabled{
+    animation: disabled .8s ease forwards;
+}
+
+@keyframes disabled{
+    from{
+        background-color: silver;
+    }
+
+    to{
+        background-color: #4c4c4c;;
+    }
+}
+
+
+/*ORANGE BUTTONS*/
+#orangeButton{
+    background-color: #ffa500;
+}
+
+.orangeActivated{
+    animation: orangeActivated .8s ease forwards;
+}
+
+@keyframes orangeActivated{
+    from{
+        background-color: #ffa500;
+    }
+
+    to{
+        background-color: white;
+        color:#ffa500;
+    }
+}
+
+.orangeDisabled{
+    animation: orangeDisabled .8s ease forwards;
+}
+
+@keyframes orangeDisabled{
+    from{
+        background-color: white;
+    }
+
+    to{
+        background-color: #ffa500;
+        color:white;
+    }
+}
+
+/*SILVER BUTTONS*/
+#silverButton{
+    background-color:#bcbcbc;
+    color: black;
+}
+
+.silverActivated{
+    animation: silverActivated .8s ease forwards;
+}
+
+@keyframes silverActivated{
+    from{
+        background-color: #bcbcbc;
+    }
+
+    to{
+        background-color: #f1f1f1;
+    }
+}
+
+.silverDisabled{
+    animation: silverDisabled .8s ease forwards;
+}
+
+@keyframes silverDisabled{
+    from{
+        background-color: #f1f1f1;
+    }
+
+    to{
+        background-color: #bcbcbc;
+    }
 }
